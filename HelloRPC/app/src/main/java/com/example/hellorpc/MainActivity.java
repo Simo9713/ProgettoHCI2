@@ -88,8 +88,6 @@ public class MainActivity extends CameraActivity implements CameraBridgeViewBase
             @Override
             public Void call() throws Exception {
                 CarForward();
-                //Mat img = new Mat(144,256, CvType.CV_8UC4);
-                //GetFrameNative(img.getNativeObjAddr());
                 return null;
             }
 
@@ -158,17 +156,29 @@ public class MainActivity extends CameraActivity implements CameraBridgeViewBase
 
     }
 
+
     public Void manageFrame(int test)
     {
         System.out.println("myHandler: here!" + test); // Do your work here
         if(isImage)
         {
             GetFrameNative(img.getNativeObjAddr());
+
+            //rilevo le linee nell'immaigne
+            lineDetection(img);
+
+
             Bitmap bm = Bitmap.createBitmap(img.cols(), img.rows(),Bitmap.Config.ARGB_8888);
             Utils.matToBitmap(img, bm);
             ImageView im = (ImageView) findViewById(R.id.imView);
             im.setImageBitmap(bm);
         }
         return null;
+    }
+
+
+    public void lineDetection(Mat inputImg)
+    {
+        
     }
 }

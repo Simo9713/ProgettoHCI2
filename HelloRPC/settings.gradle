@@ -1,6 +1,7 @@
 include ':app'
 rootProject.name = "HelloRPC"
 
-def opencvsdk = 'D:\\Documents\\Simo\\Java Programs 2\\Android\\OpenCV-android-sdk'
+
+def opencvsdk='C:\\Users\\klajd\\AndroidStudioProjects\\OpenCV-android-sdk'
 include ':opencv'
 project(':opencv').projectDir = new File(opencvsdk + '\\sdk')

@@ -47,6 +47,9 @@ JNIEXPORT void JNICALL Java_com_example_hellorpc_MainActivity_GetFrameNative(JNI
 
         std::cout << "Press Enter to get FPV image" << std::endl; std::cin.get();
         vector<ImageRequest> request = { ImageRequest("0", ImageType::Scene,false)/*, ImageRequest("1", ImageType::DepthPlanar, true) */};
+
+
+
         const vector<ImageResponse>& response = m_client->simGetImages(request);
         std::cout << "# of images received: " << response.size() << std::endl;
         //TODO: only print response size
@@ -60,7 +63,9 @@ JNIEXPORT void JNICALL Java_com_example_hellorpc_MainActivity_GetFrameNative(JNI
                     // create Mat to save img
                     //cv::Mat camera_0_img = cv::Mat(144, 256, CV_8UC4, cv::Scalar(0, 0, 0, 0));
 
-                    cv::Mat camera_0_img = cv::imdecode(response.at(0).image_data_uint8, cv::ImreadModes::IMREAD_GRAYSCALE);
+                    cv::Mat camera_0_img = cv::imdecode(response.at(0).image_data_uint8, cv::ImreadModes::IMREAD_COLOR);
+
+
                     //  vector<uint8_t> to Mat
                     /*for (int row = 0; row < response.at(0).height; row++)
                     {
