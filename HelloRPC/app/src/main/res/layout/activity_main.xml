@@ -34,9 +34,17 @@
             android:onClick="OnButtonImage"/>
 
     <ImageView
-        android:id="@+id/imView"
+        android:id="@+id/imView1"
         android:layout_width="match_parent"
-        android:layout_height="304dp" />
+        android:layout_height="208dp" />
+
+    <ImageView
+        android:id="@+id/imView2"
+        android:layout_width="match_parent"
+        android:layout_height="207dp" />
+
+
+
     <org.opencv.android.JavaCameraView
             android:id="@+id/java_surface_view"
             android:layout_width="1dp"

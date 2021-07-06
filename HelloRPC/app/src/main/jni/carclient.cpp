@@ -27,6 +27,16 @@ if(!m_client)
     m_client->setCarControls(controls);
 }
 
+JNIEXPORT void JNICALL Java_com_example_hellorpc_MainActivity_controllCar(JNIEnv *env, jobject, float angle, float force)
+{
+    if(!m_client)
+        return;
+    CarApiBase::CarControls controls;
+    controls.throttle = force;
+    controls.steering =angle;
+    m_client->setCarControls(controls);
+}
+
 JNIEXPORT void JNICALL Java_com_example_hellorpc_MainActivity_GetFrameNative(JNIEnv *env, jobject, jlong addrImg)
 {
     using std::cin;
