@@ -400,6 +400,7 @@ public class MainActivity extends CameraActivity implements CameraBridgeViewBase
 
         Imgproc.cvtColor(colorImg, hsvImg, COLOR_BGR2HSV);
 
+
         //vado a prendere un range di colori nell'immagine HSV
         Core.inRange(hsvImg, lowerbScalar,highbScalar, edge);
 
@@ -438,6 +439,7 @@ public class MainActivity extends CameraActivity implements CameraBridgeViewBase
 
 
         Point p_offset= defineCentralLine(image , lane_line);
+
 
         if (p_offset!=null)
         {

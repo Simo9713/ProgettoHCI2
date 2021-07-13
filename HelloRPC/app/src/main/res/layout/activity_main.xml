@@ -15,23 +15,19 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:onClick="OnButtonConnect"/>
+            android:onClick="OnButtonConnect"
+            android:textOff="Connection: Off"
+            android:textOn="Connection: On"/>
 
-    <Button
-            android:id="@+id/carForward"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/connectButton"
-            android:layout_centerHorizontal="true"
-            android:text="Forward"
-            android:onClick="OnButtonForward"/>
     <ToggleButton
             android:id="@+id/imageButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:onClick="OnButtonImage"/>
+            android:onClick="OnButtonImage"
+            android:textOff="acquired images: off"
+            android:textOn="acquired images: on"/>
 
     <ImageView
         android:id="@+id/imView1"
